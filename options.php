@@ -417,8 +417,9 @@ function optionsframework_options() {
 
 	//社交选项
 	$options[] = array(
-		'name' => __('社交网络', 'options_framework_theme'),
+		'name' => __('社交设置', 'options_framework_theme'),
 		'type' => 'heading');
+
 
 	$options[] = array(
 		'name' => __('微信', 'options_framework_theme'),
@@ -426,66 +427,115 @@ function optionsframework_options() {
 		'id' => 'wechat',
 		'type' => 'upload');
 
-    $options[] = array(
+		$options[] = array(
 		'name' => __('新浪微博', 'options_framework_theme'),
 		'desc' => __('新浪微博地址', 'options_framework_theme'),
 		'id' => 'sina',
-		'std' => '',
+		'std' => 'http://mokere.dfjcx.cn',
 		'type' => 'text');
 
+
 	$options[] = array(
-		'name' => __('腾讯QQ', 'options_framework_theme'),
-		'desc' => __('QQ号码', 'options_framework_theme'),
+		'name' => __('腾讯qq', 'options_framework_theme'),
+		'desc' => __('qq号码', 'options_framework_theme'),
 		'id' => 'qq',
-		'std' => '',
+		'std' => 'http://mokere.dfjcx.cn',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('QQ空间', 'options_framework_theme'),
-		'desc' => __('QQ空间地址', 'options_framework_theme'),
+		'name' => __('qq空间', 'options_framework_theme'),
+		'desc' => __('qq空间地址', 'options_framework_theme'),
 		'id' => 'qzone',
 		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('逗帆', 'options_framework_theme'),
+		'desc' => __('逗帆网up主地址', 'options_framework_theme'),
+		'id' => 'dofan',
+		'std' => 'https://www.dofan.cn/archives/author/2',
 		'type' => 'text');
 
 	$options[] = array(
 		'name' => __('GitHub', 'options_framework_theme'),
 		'desc' => __('GitHub地址', 'options_framework_theme'),
 		'id' => 'github',
-		'std' => '',
+		'std' => 'http://mokere.dfjcx.cn',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Lofter', 'options_framework_theme'),
+		'name' => __('今日头条', 'options_framework_theme'),
+		'desc' => __('今日头条地址', 'options_framework_theme'),
+		'id' => 'toutiao',
+		'std' => 'http://mokere.dfjcx.cn',
+		'type' => 'text');
+
+		$options[] = array(
+		'name' => __('QQ看点（公众号）', 'options_framework_theme'),
+		'desc' => __('QQ看点地址', 'options_framework_theme'),
+		'id' => 'kandian',
+		'std' => 'http://mokere.dfjcx.cn',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('lofter', 'options_framework_theme'),
 		'desc' => __('lofter地址', 'options_framework_theme'),
 		'id' => 'lofter',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('BiliBili', 'options_framework_theme'),
-		'desc' => __('B站地址', 'options_framework_theme'),
+		'name' => __('bilibili', 'options_framework_theme'),
+		'desc' => __('bilibili地址', 'options_framework_theme'),
 		'id' => 'bili',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('优酷视频', 'options_framework_theme'),
-		'desc' => __('优酷地址', 'options_framework_theme'),
+		'name' => __('youku', 'options_framework_theme'),
+		'desc' => __('youku地址', 'options_framework_theme'),
 		'id' => 'youku',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('网易云音乐', 'options_framework_theme'),
-		'desc' => __('网易云音乐地址', 'options_framework_theme'),
-		'id' => 'wangyiyun',
+		'name' => __('alipay', 'options_framework_theme'),
+		'desc' => __('alipay二维码', 'options_framework_theme'),
+		'id' => 'alipay',
+		'type' => 'upload');
+
+	$options[] = array(
+		'name' => __('dribbble', 'options_framework_theme'),
+		'desc' => __('dribbble地址', 'options_framework_theme'),
+		'id' => 'dribbble',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Twitter', 'options_framework_theme'),
-		'desc' => __('推特地址', 'options_framework_theme'),
+		'name' => __('tieba', 'options_framework_theme'),
+		'desc' => __('tieba地址', 'options_framework_theme'),
+		'id' => 'tieba',
+		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('twitter', 'options_framework_theme'),
+		'desc' => __('twitter地址', 'options_framework_theme'),
 		'id' => 'twitter',
+		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('zcool', 'options_framework_theme'),
+		'desc' => __('zcool地址', 'options_framework_theme'),
+		'id' => 'zcool',
+		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('zhihu', 'options_framework_theme'),
+		'desc' => __('zhihu地址', 'options_framework_theme'),
+		'id' => 'zhihu',
 		'std' => '',
 		'type' => 'text');
 
@@ -514,13 +564,6 @@ function optionsframework_options() {
 		'name' => __('CSDN', 'options_framework_theme'),
 		'desc' => __('CSND社区地址', 'options_framework_theme'),
 		'id' => 'csdn',
-		'std' => '',
-		'type' => 'text');
-
-	$options[] = array(
-		'name' => __('知乎', 'options_framework_theme'),
-		'desc' => __('知乎地址', 'options_framework_theme'),
-		'id' => 'zhihu',
 		'std' => '',
 		'type' => 'text');
 

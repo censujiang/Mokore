@@ -13,8 +13,8 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 			get_template_part( 'tpl/content', 'single' );
-			get_template_part('layouts/post','nextprev');  
-		    get_template_part('layouts/authorprofile'); 
+			get_template_part('layouts/post','nextprev');
+		    get_template_part('layouts/authorprofile');
 		endwhile; // End of the loop.
 		?>
 		</main><!-- #main -->

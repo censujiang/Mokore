@@ -29,7 +29,7 @@
 			<?php if(have_comments()): ?>
 
 				<ul class="commentwrap">
-					<?php wp_list_comments('type=comment&callback=mokore_comment_format'); ?>	
+					<?php wp_list_comments('type=comment&callback=mokore_comment_format'); ?>
 				</ul>
 
           <nav id="comments-navi">
