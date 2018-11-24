@@ -52,6 +52,15 @@ if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
   alert('我求求您别特么用老掉牙的IE浏览器了吧！。');
 }
 </script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a5ddc931c4e93dcc1834e89b4b003cbd";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </head>
 <body <?php body_class(); ?>>
 	<section id="main-container">

@@ -222,7 +222,7 @@ function optionsframework_options() {
 		'name' => __('页脚信息', 'options_framework_theme'),
 		'desc' => __('页脚说明文字，支持HTML代码', 'options_framework_theme'),
 		'id' => 'footer_info',
-		'std' => '&copy; 2016',
+		'std' => '&copy; 2018',
 		'type' => 'textarea');
 
 	$options[] = array(
@@ -659,7 +659,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('背景音乐', 'options_framework_theme'),
-		'desc' => __('该音乐仅在首页自动播放,访客第一次访问时可能无法播放音乐', 'options_framework_theme'),
+		'desc' => __('访客第一次访问时可能无法播放音乐,记得提醒访客在不方便时将手机调为静音，否则将会像开发者江程训一样被爸妈发现晚上玩手机', 'options_framework_theme'),
 		'id' => 'imgbox_music',
 		'std' => 'https://a0.kuyingfang.cn/2018/07/6ab0ef8544af390b3e2fc3402154b634.mp3',
 		'type' => 'text');
