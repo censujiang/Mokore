@@ -6,7 +6,7 @@
  *
  * @package Mokore
  */
- 
+
 define( 'MOKORE_VERSION', '2.0.6.170420' );
 
 if ( !function_exists( 'mokore_setup' ) ) :
@@ -17,12 +17,12 @@ if ( !function_exists( 'mokore_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
- 
+
 if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 }
- 
+
 
 
 function mokore_setup() {
@@ -75,9 +75,9 @@ function mokore_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
-	
+
 	add_filter('pre_option_link_manager_enabled','__return_true');
-	
+
 	// 优化代码
 	//去除头部冗余代码
     remove_action('wp_head', 'feed_links_extra', 3);
@@ -88,7 +88,7 @@ function mokore_setup() {
     remove_action('wp_head', 'wp_generator');
 	remove_action( 'wp_head', 'wp_generator' ); //隐藏wordpress版本
     remove_filter('the_content', 'wptexturize'); //取消标点符号转义
-    
+
 	remove_action('rest_api_init', 'wp_oembed_register_route');
 	remove_filter('rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4);
 	remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
@@ -98,14 +98,14 @@ function mokore_setup() {
 	// Remove the Link header for the WP REST API
 	// [link] => <http://cnzhx.net/wp-json/>; rel="https://api.w.org/"
 	remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
-	
+
 	function coolwp_remove_open_sans_from_wp_core() {
 		wp_deregister_style( 'open-sans' );
 		wp_register_style( 'open-sans', false );
 		wp_enqueue_style('open-sans','');
 	}
 	add_action( 'init', 'coolwp_remove_open_sans_from_wp_core' );
-	
+
 	/**
 	* Disable the emoji's
 	*/
@@ -113,18 +113,18 @@ function mokore_setup() {
 	 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 	 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 	 remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	 remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
+	 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	 remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-	 remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
+	 remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 	 remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 	 add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
 	}
 	add_action( 'init', 'disable_emojis' );
-	 
+
 	/**
 	 * Filter function used to remove the tinymce emoji plugin.
-	 * 
-	 * @param    array  $plugins  
+	 *
+	 * @param    array  $plugins
 	 * @return   array             Difference betwen the two arrays
 	 */
 	function disable_emojis_tinymce( $plugins ) {
@@ -134,7 +134,7 @@ function mokore_setup() {
 	 return array();
 	 }
 	}
-	
+
 	// 移除菜单冗余代码
 	add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
 	add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
@@ -142,7 +142,7 @@ function mokore_setup() {
 	function my_css_attributes_filter($var) {
 	return is_array($var) ? array_intersect($var, array('current-menu-item','current-post-ancestor','current-menu-ancestor','current-menu-parent')) : '';
 	}
-		
+
 }
 endif;
 add_action( 'after_setup_theme', 'mokore_setup' );
@@ -188,7 +188,7 @@ add_action( 'widgets_init', 'mokore_widgets_init' );
  */
 function mokore_scripts() {
 	wp_enqueue_style( 'mokore', get_stylesheet_uri(), array(), MOKORE_VERSION );
-	wp_enqueue_script( 'jq', get_template_directory_uri() . '/js/jquery.min.js', array(), MOKORE_VERSION, true ); 
+	wp_enqueue_script( 'jq', get_template_directory_uri() . '/js/jquery.min.js', array(), MOKORE_VERSION, true );
 	wp_enqueue_script( 'pjax-libs', get_template_directory_uri() . '/js/jquery.pjax.js', array(), MOKORE_VERSION, true );
 	wp_enqueue_script( 'input', get_template_directory_uri() . '/js/input.min.js', array(), MOKORE_VERSION, true );
     wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.js', array(), MOKORE_VERSION, true );
@@ -234,6 +234,11 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/mokore-update.php';
 require get_template_directory() . '/inc/categories-images.php';
+
+/**
+ * aboutjcx.
+ */
+require get_template_directory() . '/inc/aboutjcx.php'; 
 
 
 /**
@@ -310,7 +315,7 @@ function get_post_views($post_id) {
     }else{
         return restyle_text($views);
     }
-} 
+}
 
 
 /*
@@ -329,12 +334,12 @@ function specs_zan(){
         setcookie('specs_zan_'.$id,$id,$expire,'/',$domain,false);
         if (!$specs_raters || !is_numeric($specs_raters)) {
             update_post_meta($id, 'specs_zan', 1);
-        } 
+        }
         else {
             update_post_meta($id, 'specs_zan', ($specs_raters + 1));
         }
         echo get_post_meta($id,'specs_zan',true);
-    } 
+    }
     die;
 }
 
@@ -358,7 +363,7 @@ function get_the_link_items($id = null){
 function get_link_items(){
   $linkcats = get_terms( 'link_category' );
   	if ( !empty($linkcats) ) {
-      	foreach( $linkcats as $linkcat){            
+      	foreach( $linkcats as $linkcat){
         	$result .=  '<h3 class="link-title">'.$linkcat->name.'</h3>';
         	if( $linkcat->description ) $result .= '<div class="link-description">' . $linkcat->description . '</div>';
         	$result .=  get_the_link_items($linkcat->term_id);
@@ -373,7 +378,7 @@ function get_link_items(){
 /*
  * Gravatar头像使用中国服务器
  */
-function gravatar_cn( $url ){ 
+function gravatar_cn( $url ){
 	$gravatar_url = array('0.gravatar.com','1.gravatar.com','2.gravatar.com');
 	return str_replace( $gravatar_url, 'cn.gravatar.com', $url );
 }
@@ -381,13 +386,13 @@ add_filter( 'get_avatar_url', 'gravatar_cn', 4 );
 
 
 /*
- * 阻止站内文章互相Pingback 
+ * 阻止站内文章互相Pingback
  */
-function theme_noself_ping( &$links ) { 
+function theme_noself_ping( &$links ) {
 	$home = get_option( 'home' );
 	foreach ( $links as $l => $link )
 	if ( 0 === strpos( $link, $home ) )
-	unset($links[$l]); 
+	unset($links[$l]);
 }
 add_action('pre_ping','theme_noself_ping');
 
@@ -493,43 +498,43 @@ function mokore_infinite_scroll_render() {
 /*
  * 编辑器增强
  */
-function enable_more_buttons($buttons) { 
-	$buttons[] = 'hr'; 
-	$buttons[] = 'del'; 
-	$buttons[] = 'sub'; 
+function enable_more_buttons($buttons) {
+	$buttons[] = 'hr';
+	$buttons[] = 'del';
+	$buttons[] = 'sub';
 	$buttons[] = 'sup';
 	$buttons[] = 'fontselect';
 	$buttons[] = 'fontsizeselect';
 	$buttons[] = 'cleanup';
 	$buttons[] = 'styleselect';
 	$buttons[] = 'wp_page';
-	$buttons[] = 'anchor'; 
-	$buttons[] = 'backcolor'; 
+	$buttons[] = 'anchor';
+	$buttons[] = 'backcolor';
 	return $buttons;
-} 
+}
 add_filter("mce_buttons_3", "enable_more_buttons");
 // 下载按钮
-function download($atts, $content = null) {  
-return '<a class="download" href="'.$content.'" rel="external"  
-target="_blank" title="下载地址">  
-<span><i class="iconfont down">&#xe69f;</i>Download</span></a>';}  
-add_shortcode("download", "download"); 
+function download($atts, $content = null) {
+return '<a class="download" href="'.$content.'" rel="external"
+target="_blank" title="下载地址">
+<span><i class="iconfont down">&#xe69f;</i>Download</span></a>';}
+add_shortcode("download", "download");
 
-add_action('after_wp_tiny_mce', 'bolo_after_wp_tiny_mce');  
-function bolo_after_wp_tiny_mce($mce_settings) {  
-?>  
-<script type="text/javascript">  
+add_action('after_wp_tiny_mce', 'bolo_after_wp_tiny_mce');
+function bolo_after_wp_tiny_mce($mce_settings) {
+?>
+<script type="text/javascript">
 QTags.addButton( 'download', '下载按钮', "[download]下载地址[/download]" );
 function bolo_QTnextpage_arg1() {
-}  
-</script>  
-<?php } 
+}
+</script>
+<?php }
 
 
 /*
  * 后台登录页
  * @M.J
- */	
+ */
 //Login Page style
 function custom_login() {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
@@ -552,7 +557,7 @@ add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 //Login Page Footer
 function custom_html() {
 	if ( mokore_option('login_bg') ) {
-		$loginbg = mokore_option('login_bg'); 
+		$loginbg = mokore_option('login_bg');
 	}else{
 		$loginbg = get_bloginfo('template_directory').'/images/hd.jpg';
 	}
@@ -618,6 +623,4 @@ function comment_mail_notify($comment_id){
 add_action('comment_post', 'comment_mail_notify');
 
 
-//code end 
-
-
+//code end

@@ -114,7 +114,7 @@ function optionsframework_options() {
 	$options[] = array(
         'name' => __("主题风格", 'mokore'),
         'id' => 'theme_skin',
-        'std' => "#FE9600",
+        'std' => "#23d3e0",
         'desc' => __('自定义主题颜色', ''),
         'type' => "color"
     );
@@ -215,7 +215,7 @@ function optionsframework_options() {
 		'name' => __('博主描述', 'options_framework_theme'),
 		'desc' => __('一段自我描述的话', 'options_framework_theme'),
 		'id' => 'admin_des',
-		'std' => '感谢使用本主题！请在设置中修改这段话吧~',
+		'std' => '水树花灯是个大傻逼，别问江程训为什么这么记仇',
 		'type' => 'textarea');
 
 	$options[] = array(
@@ -431,7 +431,7 @@ function optionsframework_options() {
 		'name' => __('新浪微博', 'options_framework_theme'),
 		'desc' => __('新浪微博地址', 'options_framework_theme'),
 		'id' => 'sina',
-		'std' => 'http://mokere.dfjcx.cn',
+		'std' => 'https://weibo.com/imjcx',
 		'type' => 'text');
 
 
@@ -439,7 +439,7 @@ function optionsframework_options() {
 		'name' => __('腾讯qq', 'options_framework_theme'),
 		'desc' => __('qq号码', 'options_framework_theme'),
 		'id' => 'qq',
-		'std' => 'http://mokere.dfjcx.cn',
+		'std' => '3392324156',
 		'type' => 'text');
 
 	$options[] = array(
@@ -656,6 +656,13 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('其他', 'options_framework_theme'),
 		'type' => 'heading' );
+
+	$options[] = array(
+		'name' => __('背景音乐', 'options_framework_theme'),
+		'desc' => __('该音乐仅在首页自动播放,访客第一次访问时可能无法播放音乐', 'options_framework_theme'),
+		'id' => 'imgbox_music',
+		'std' => 'https://a0.kuyingfang.cn/2018/07/6ab0ef8544af390b3e2fc3402154b634.mp3',
+		'type' => 'text');
 
 	$options[] = array(
 		'name' => __('开启PJAX局部刷新', 'options_framework_theme'),

@@ -13,6 +13,10 @@ $bg_style = mokore_option('focus_height') ? 'background-position: center center;
       	<?php endif; ?>
 		<div class="header-info"><p><?php echo mokore_option('admin_des', 'Carpe Diem and Do what I like'); ?></p></div>
 		<div class="top-social">
+			<?php if (mokore_option('imgbox_music')){ ?>
+				<audio src="<?php echo mokore_option('imgbox_music',''); ?>" preload="meta" loop autoplay id="bgmusic"></audio>
+			<?php } ?>
+			<!--上面是音乐，下面是社交组件-->
 		<?php if (mokore_option('wechat')){ ?>
 		<li class="wechat"><a href="#"><img src="<?php bloginfo('template_url'); ?>/images/sns/wechat.png"/></a>
 			<div class="wechatInner">
