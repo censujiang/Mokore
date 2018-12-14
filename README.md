@@ -18,6 +18,7 @@
 -   主题QQ群： [_346363551_](http://shang.qq.com/wpa/qunwpa?idkey=d99e5a83cbba65cd3054bd38b0c9b6bb8cc524b32d269ccb5d67e6d46723f569)
 -   主题状态：更新中
 -   GIthub下载：[https](https://github.com/censujiang/Mokore)：[//github.com/censujiang/Mokore](https://github.com/censujiang/Mokore)
+-   声明：本主题基于aknia的分支siren修改
 
 # 预览图
 
