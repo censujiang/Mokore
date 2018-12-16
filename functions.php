@@ -6,11 +6,17 @@
  *
  * @package Mokore
  */
+ //检测主题更新 wpdaxue.com
+ require_once(TEMPLATEPATH . '/theme-update-checker.php');
+ $wpdaxue_update_checker = new ThemeUpdateChecker(
+ 	'Mokore', //主题名字
+ 	'http://img0.dfjcx.cn/mokore/info.json'  //info.json 的访问地址
+ );
 
-define( 'MOKORE_VERSION', '2.0.6.170420' );
+define( 'MOKORE_VERSION', '1.1' );
 
 if ( !function_exists( 'mokore_setup' ) ) :
-/**
+/*
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which
@@ -86,7 +92,7 @@ function mokore_setup() {
     remove_action('wp_head', 'index_rel_link');
     remove_action('wp_head', 'start_post_rel_link', 10, 0);
     remove_action('wp_head', 'wp_generator');
-	remove_action( 'wp_head', 'wp_generator' ); //隐藏wordpress版本
+	   remove_action( 'wp_head', 'wp_generator' ); //隐藏wordpress版本
     remove_filter('the_content', 'wptexturize'); //取消标点符号转义
 
 	remove_action('rest_api_init', 'wp_oembed_register_route');
@@ -238,7 +244,7 @@ require get_template_directory() . '/inc/categories-images.php';
 /**
  * aboutjcx.
  */
-require get_template_directory() . '/inc/aboutjcx.php'; 
+require get_template_directory() . '/inc/aboutjcx.php';
 
 
 /**

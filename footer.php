@@ -22,14 +22,14 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<div class="footertext">
-				<p class="foo-logo" style="background-image: url('<?php bloginfo('template_url'); ?>/images/f-logo.png');"></p>
+				<!--<p class="foo-logo" style="background-image: url('<?php bloginfo('template_url'); ?>/images/f-logo.png');"></p>下个版本再改-->
 				<p><?php echo mokore_option('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device">
 			<?php
 			$statistics_link = mokore_option('site_statistics_link') ? '<a href="'.mokore_option('site_statistics_link').'" target="_blank" rel="nofollow">Statistics</a>' : '';
 			$site_map_link = mokore_option('site_map_link') ? '<a href="'.mokore_option('site_map_link').'" target="_blank" rel="nofollow">Sitemap</a>' : '';
-			printf(esc_html__( '%1$s &nbsp; %2$s &nbsp; %3$s &nbsp; %4$s', 'mokore' ), $site_map_link, '本站主题<a href="http://mokore.dfjcx.cn" rel="designer" target="_blank" rel="nofollow">Mokore</a>', '|自豪地使用<a href="https://wordpress.org/" target="_blank" rel="nofollow">WordPress</a>', $statistics_link);
+			printf(esc_html__( '%1$s &nbsp; %2$s &nbsp; %3$s &nbsp; %4$s', 'mokore' ), $site_map_link, '<a href="https://wordpress.org/" rel="designer" target="_blank" rel="nofollow">WordPress</a>强力驱动', '/','主题<a href="http://mokore.dfjcx.cn" target="_blank" rel="friend">Mokore</a> BY <a href="https://dfjcx.cn" target="_blank" rel="friend">江程训</a>', $statistics_link);
 			?>
 			</div>
 		</div><!-- .site-info -->
@@ -61,7 +61,7 @@
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
 	<a href="#" class="cd-top"></a>
-	<!-- search start -->
+	<!-- 搜索代码开始 -->
 	<form class="js-search search-form search-form--modal" method="get" action="<?php echo home_url(); ?>" role="search">
 		<div class="search-form__inner">
 			<div>
@@ -72,12 +72,20 @@
 		</div>
 		<div class="search_close"></div>
 	</form>
-	<!-- search end -->
+	<!-- 搜索代码结束 -->
 <?php wp_footer(); ?>
-<?php if(mokore_option('site_statistics')){ ?>
-<div class="site-statistics">
-<script type="text/javascript"><?php echo mokore_option('site_statistics'); ?></script>
-</div>
+<script src="<?php bloginfo('template_url'); ?>/inc/js/jquery-1.10.2.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/inc/js/jquery.share.min.js"></script>
+<script>
+	$('#share-1').share();
+	$('#share-2').share({sites: ['qzone', 'qq', 'weibo','wechat']});
+	$('#share-3').share();
+	$('#share-4').share();
+</script>
+<!-- Footer代码开始 -->
+<?php if(mokore_option('footer_code')){ ?>
+<?php echo mokore_option('footer_code'); ?>
 <?php } ?>
+<!-- Footer代码结束 -->
 </body>
 </html>
