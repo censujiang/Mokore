@@ -57,9 +57,9 @@
 						'id_submit' => 'submit',
 						'title_reply' => '',
 						'title_reply_to' => '<div class="graybar"><i class="fa fa-comments-o"></i>' . esc_html__('Leave a Reply to', 'mokore') . ' %s' . '</div>',
-						'cancel_reply_link' => esc_html__('Cancel Reply', 'mokore'),
-						'label_submit' => esc_html__('Post Comment', 'mokore'),
-						'comment_field' => '<textarea placeholder="' . esc_attr__('Type in your comments', 'mokore') . ' ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea>',
+						'cancel_reply_link' => esc_html__('取消回复', 'mokore'),
+						'label_submit' => esc_html__('发表言论', 'mokore'),
+						'comment_field' => '<textarea placeholder="' . esc_attr__('期待大佬的精彩发言', 'mokore') . ' ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea>',
 						'comment_notes_after' => '',
 						'comment_notes_before' => '',
 						'fields' => apply_filters( 'comment_form_default_fields', array(
@@ -68,7 +68,7 @@
 							'email' =>
 								'<input type="text" placeholder="' . esc_attr__('邮箱', 'mokore') . ' ' . ( $req ? '(' . esc_attr__('必填项', 'mokore') . ')' : '') . '" name="email" id="email" value="' . esc_attr($comment_author_email) . '" size="22" tabindex="1" ' . ($req ? "aria-required='true'" : '' ). ' />',
 							'url' =>
-								'<input type="text" placeholder="' . esc_attr__('博客', 'mokore') . '" name="url" id="url" value="' . esc_attr($comment_author_url) . '" size="22" tabindex="1" />' . $robot_comments . $private_ms
+								'<input type="text" placeholder="' . esc_attr__('个人网站/博客', 'mokore') . '" name="url" id="url" value="' . esc_attr($comment_author_url) . '" size="22" tabindex="1" />' . $robot_comments . $private_ms
 							)
 						)
 					);
