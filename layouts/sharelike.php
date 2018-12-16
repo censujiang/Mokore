@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 	/**
 	 * sharelike
@@ -18,7 +18,7 @@
 	</a>
 </div>
 <?php } ?>
-<?php if ( mokore_option('post_share') == 'yes') { ?>
+<?php if ( mokore_option('post_share') == 'yes') { ?>		
 <div class="post-share">
 <ul class="sharehidden">
 	<li><a href="http://www.jiathis.com/send/?webid=weixin&url=<?php the_permalink(); ?>&title=<?php the_title(''); ?>" onclick="window.open(this.href, 'renren-share', 'width=490,height=700');return false;" class="s-weixin"><img src="<?php bloginfo('template_url'); ?>/images/sns/wechat.png"/></a></li>

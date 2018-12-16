@@ -28,13 +28,10 @@
 	</div><!-- .entry-content -->
 	<?php the_reward(); ?>
 	<footer class="post-footer">
-	<div class="post-lincenses">本站文章基于国际协议<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="nofollow">BY-NA-SA 4.0</a>协议共享；</br>
-		如未特殊说明，本站文章皆为原创文章，请规范转载。
-	</div>
+	<div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"  target="_blank" rel="nofollow">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
 	<div class="post-tags">
 		<?php if ( has_tag() ) { echo '<i class="iconfont">&#xe68c;</i> '; the_tags('', ' ', ' ');}?>
 	</div>
-</br>
     <?php get_template_part('layouts/sharelike'); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -126,19 +126,6 @@ function optionsframework_options() {
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => __('站点图标', 'options_framework_theme'),
-		'desc' => __('设置后你将会在标签页上看到此图标', 'options_framework_theme'),
-		'id' => 'mokore_logo_ico',
-		'std' => $imagepath.'/images/favicon.ico',
-		'type' => 'upload');
-
-	$options[] = array(
-		'name' => __('登录页LOGO', 'options_framework_theme'),
-		'desc' => __('由于江程训非常智障的将规则写在了css里面并且忘记了怎么写回去，所以请手动修改主题目录下"/images/login.png"', 'options_framework_theme'),
-		'id' => 'mokore_logo_login',
-		);
-
-	$options[] = array(
 		'name' => __('自定义关键词和描述', 'options_framework_theme'),
 		'desc' => __('开启之后可自定义填写关键词和描述，默认关闭', 'options_framework_theme'),
 		'id' => 'mokore_meta',
@@ -232,25 +219,32 @@ function optionsframework_options() {
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => __('版权信息', 'options_framework_theme'),
-		'desc' => __('版权信息文字，支持HTML代码', 'options_framework_theme'),
+		'name' => __('页脚信息', 'options_framework_theme'),
+		'desc' => __('页脚说明文字，支持HTML代码', 'options_framework_theme'),
 		'id' => 'footer_info',
 		'std' => '&copy; 2018',
 		'type' => 'textarea');
 
-		$options[] = array(
-		'name' => __('Head代码', 'options_framework_theme'),
-		'desc' => __('Head代码，放在body底部，支持HTML代码', 'options_framework_theme'),
-		'id' => 'Head_code',
+	$options[] = array(
+		'name' => __('站长统计', 'options_framework_theme'),
+		'desc' => __('填写统计代码，将被隐藏，如需要在下方填写链接地址', 'options_framework_theme'),
+		'id' => 'site_statistics',
 		'std' => '',
 		'type' => 'textarea');
 
-		$options[] = array(
-		'name' => __('Footer代码', 'options_framework_theme'),
-		'desc' => __('Footer代码，放在body底部，支持HTML代码', 'options_framework_theme'),
-		'id' => 'footer_code',
+	$options[] = array(
+		'name' => __('站长统计后台地址', 'options_framework_theme'),
+		'desc' => __('填写查看统计数据的链接', 'options_framework_theme'),
+		'id' => 'site_statistics_link',
 		'std' => '',
-		'type' => 'textarea');
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('网站地图地址', 'options_framework_theme'),
+		'desc' => __('Sitemap生成的地图链接', 'options_framework_theme'),
+		'id' => 'site_map_link',
+		'std' => '',
+		'type' => 'text');
 
 	$options[] = array(
 		'name' => __('自定义CSS样式', 'options_framework_theme'),
@@ -457,7 +451,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('逗帆', 'options_framework_theme'),
-		'desc' => __('逗帆网UP主地址，本主题作者江程训在逗帆担任站长，如果您可以的话请务必在逗帆网注册账号哦~', 'options_framework_theme'),
+		'desc' => __('逗帆网up主地址', 'options_framework_theme'),
 		'id' => 'dofan',
 		'std' => 'https://www.dofan.cn/archives/author/2',
 		'type' => 'text');
@@ -491,22 +485,22 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('哔哩哔哩', 'options_framework_theme'),
-		'desc' => __('哔哩哔哩UP主地址', 'options_framework_theme'),
+		'name' => __('bilibili', 'options_framework_theme'),
+		'desc' => __('bilibili地址', 'options_framework_theme'),
 		'id' => 'bili',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('优酷', 'options_framework_theme'),
-		'desc' => __('优酷主播地址', 'options_framework_theme'),
+		'name' => __('youku', 'options_framework_theme'),
+		'desc' => __('youku地址', 'options_framework_theme'),
 		'id' => 'youku',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('支付宝', 'options_framework_theme'),
-		'desc' => __('支付宝加朋友y二维码', 'options_framework_theme'),
+		'name' => __('alipay', 'options_framework_theme'),
+		'desc' => __('alipay二维码', 'options_framework_theme'),
 		'id' => 'alipay',
 		'type' => 'upload');
 
@@ -518,29 +512,29 @@ function optionsframework_options() {
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('百度贴吧', 'options_framework_theme'),
-		'desc' => __('百度贴吧个人主页地址', 'options_framework_theme'),
+		'name' => __('tieba', 'options_framework_theme'),
+		'desc' => __('tieba地址', 'options_framework_theme'),
 		'id' => 'tieba',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
 		'name' => __('twitter', 'options_framework_theme'),
-		'desc' => __('推特个人主页地址', 'options_framework_theme'),
+		'desc' => __('twitter地址', 'options_framework_theme'),
 		'id' => 'twitter',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('zcool站酷', 'options_framework_theme'),
+		'name' => __('zcool', 'options_framework_theme'),
 		'desc' => __('zcool地址', 'options_framework_theme'),
 		'id' => 'zcool',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('知乎', 'options_framework_theme'),
-		'desc' => __('知乎个人主页地址', 'options_framework_theme'),
+		'name' => __('zhihu', 'options_framework_theme'),
+		'desc' => __('zhihu地址', 'options_framework_theme'),
 		'id' => 'zhihu',
 		'std' => '',
 		'type' => 'text');
@@ -554,7 +548,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Google+', 'options_framework_theme'),
-		'desc' => __('G+个人主页地址', 'options_framework_theme'),
+		'desc' => __('G+地址', 'options_framework_theme'),
 		'id' => 'googleplus',
 		'std' => '',
 		'type' => 'text');
@@ -588,7 +582,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('聚焦标题', 'options_framework_theme'),
-		'desc' => __('默认为聚焦', 'options_framework_theme'),
+		'desc' => __('默认为聚焦，你也可以修改为其他，当然不能当广告用！不允许！！', 'options_framework_theme'),
 		'id' => 'feature_title',
 		'std' => '聚焦',
 		'class' => 'mini',
@@ -667,7 +661,7 @@ function optionsframework_options() {
 		'name' => __('背景音乐', 'options_framework_theme'),
 		'desc' => __('访客第一次访问时可能无法播放音乐,记得提醒访客在不方便时将手机调为静音，否则将会像开发者江程训一样被爸妈发现晚上玩手机', 'options_framework_theme'),
 		'id' => 'imgbox_music',
-		'std' => '',
+		'std' => 'https://a0.kuyingfang.cn/2018/07/6ab0ef8544af390b3e2fc3402154b634.mp3',
 		'type' => 'text');
 
 	$options[] = array(
@@ -734,6 +728,13 @@ function optionsframework_options() {
 		'type' => 'checkbox');
 
 	$options[] = array(
+		'name' => __('开启多说插件支持', 'options_framework_theme'),
+		'desc' => __('如果使用多说插件，请勾选此项', 'options_framework_theme'),
+		'id' => 'general_disqus_plugin_support',
+		'std' => '0',
+		'type' => 'checkbox');
+
+	$options[] = array(
 		'name' => __('开启Prism代码高亮支持', 'options_framework_theme'),
 		'desc' => __('仅支持Prism.js的高亮插件，如果你用使用该插件且开启了Pjax，请勾选此项，这不是插件功能，只是帮助插件JS文件进入Pjax重载', 'options_framework_theme'),
 		'id' => 'open_prism_codelamp',
@@ -789,7 +790,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('注册验证', 'options_framework_theme'),
-		'desc' => __('勾选开启滑动验证(这不是评论验证！只是注册验证)', 'options_framework_theme'),
+		'desc' => __('勾选开启滑动验证', 'options_framework_theme'),
 		'id' => 'login_validate',
 		'std' => '0',
 		'type' => 'checkbox');

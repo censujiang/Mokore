@@ -2,16 +2,39 @@
 /*
 Theme Name: Mokore
 Theme URI: http://mokore.dfjcx.cn
-Author: 江程训（CensuJiang）
+Author: CensuJiang
 Author URI: http://dfjcx.cn
 Description: 一个Wordpress二次元个人博客主题，简约而不简单，Made BY 江程训
-Version: 1.1
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mokore
 Tags: Akina,二次元主题,个人博客,二次元，大佬必备
 */
 
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+## Links
+## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+## Posts and pages
+## Asides
+## Comments
+# Infinite scroll
+# Media
+## Captions
+## Galleries
+--------------------------------------------------------------*/
 #content {
     animation: main 1s;
 }

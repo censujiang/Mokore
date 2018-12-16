@@ -45,14 +45,7 @@ if (mokore_option('mokore_meta') == true) {
 <meta name="description" content="<?php echo $description; ?>" />
 <meta name="keywords" content="<?php echo $keywords; ?>" />
 <?php } ?>
-<?php if(mokore_option('mokore_logo_ico')){ ?>
-<link rel="shortcut icon" href="<?php echo mokore_option('mokore_logo_ico'); ?>"/>
-<?php } ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/inc/css/share.min.css">
-<style>
-	.row { padding: 20px 0 0 20px }
-	.row-pad { padding: 20px 0 0 60px }
-</style>
+<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/images/favicon.ico"/>
 <?php wp_head(); ?>
 <script type="text/javascript">
 if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
@@ -68,11 +61,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<!-- 自定义head开始 -->
-<?php if(mokore_option('head_code')){ ?>
-<?php echo mokore_option('head_code'); ?>
-<?php } ?>
-<!-- 自定义head结束 -->
 </head>
 <body <?php body_class(); ?>>
 	<section id="main-container">
