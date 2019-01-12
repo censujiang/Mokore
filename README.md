@@ -1,7 +1,7 @@
 
 ![](http://img0.dfjcx.cn/2018/11/timg.jpg)
 
-一个Wordpress二次元个人博客主题，简约而不简单，Made BY 江程训。
+一个Wordpress二次元个人博客主题，简约而不简单，，Made BY 江程训。
 
 最近总感觉作为一个Wordpress老玩家（其实也不算多老，也就接触这个网站程序一年），自己似乎少了点什么，于是就做了这款主题。
 
