@@ -4,12 +4,16 @@ $image_file = get_random_bg_url() ? 'background-image: url('.get_random_bg_url()
 $bg_style = mokore_option('focus_height') ? 'background-position: center center;background-attachment: inherit;' : '';
 ?>
 <figure id="centerbg" class="centerbg" style="<?php echo $image_file.$bg_style ?>">
+	<?php if(!mokore_option('focus_slant')){ ?>
+		<div class="slant-left"></div>
+		<div class="slant-right"></div>
+	<?php } ?>
 	<?php if ( !mokore_option('focus_infos') ){ ?>
 	<div class="focusinfo">
    		<?php if (mokore_option('focus_logo')):?>
 	     <div class="header-tou"><a href="<?php bloginfo('url');?>" ><img src="<?php echo mokore_option('focus_logo', ''); ?>"></a></div>
 	  	<?php else :?>
-         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url'); ?>/images/avatar.jpg"></a></div>
+         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="//wx2.sinaimg.cn/small/006rG8asly1fzte28fllej30dw0dv75c.jpg"></a></div>
       	<?php endif; ?>
 		<div class="header-info"><p><?php echo mokore_option('admin_des', 'Carpe Diem and Do what I like'); ?></p></div>
 		<div class="top-social">
@@ -75,19 +79,19 @@ $bg_style = mokore_option('focus_height') ? 'background-position: center center;
 		<?php } ?>
 	<?php if (mokore_option('zhihu')){ ?>
 			<li><a href="<?php echo mokore_option('zhihu', ''); ?>" target="_blank" class="social-zhihu" title="zhihu"><img src="<?php bloginfo('template_url'); ?>/images/sns/zhihu.png"/></a></li>
-		<?php } ?>
-		<?php if (mokore_option('facebook')){ ?>
+	<?php } ?>
+	<?php if (mokore_option('facebook')){ ?>
 		<li><a href="<?php echo mokore_option('facebook', ''); ?>" target="_blank" class="social-wangyiyun" title="Facebook"><img src="<?php bloginfo('template_url'); ?>/images/sns/facebook.png"/></a></li>
 		<?php } ?>
-		<?php if (mokore_option('googleplus')){ ?>
+	<?php if (mokore_option('googleplus')){ ?>
 		<li><a href="<?php echo mokore_option('googleplus', ''); ?>" target="_blank" class="social-wangyiyun" title="Google+"><img src="<?php bloginfo('template_url'); ?>/images/sns/googleplus.png"/></a></li>
-		<?php } ?>
-		<?php if (mokore_option('jianshu')){ ?>
+	<?php } ?>
+	<?php if (mokore_option('jianshu')){ ?>
 		<li><a href="<?php echo mokore_option('jianshu', ''); ?>" target="_blank" class="social-wangyiyun" title="简书"><img src="<?php bloginfo('template_url'); ?>/images/sns/jianshu.png"/></a></li>
-		<?php } ?>
-		<?php if (mokore_option('csdn')){ ?>
+	<?php } ?>
+	<?php if (mokore_option('csdn')){ ?>
 		<li><a href="<?php echo mokore_option('csdn', ''); ?>" target="_blank" class="social-wangyiyun" title="CSDN"><img src="<?php bloginfo('template_url'); ?>/images/sns/csdn.png"/></a></li>
-		<?php } ?>
+	<?php } ?>
 	  	</div>
 	</div>
 	<?php } ?>

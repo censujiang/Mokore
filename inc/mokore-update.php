@@ -10,6 +10,19 @@ remove_filter('term_description', 'wp_kses_data');
 // 去除顶部工具栏
 show_admin_bar(false);
 
+/**
+ * 网页运行时间
+ */
+function get_web_buildtime()
+{
+    $now_time = date("Y-m-d");
+    $buil_dtime = mokore_option('web_buildtime');
+    $date = "$buil_dtime";
+    $time_1 = strtotime($now_time);
+    $time_2 = strtotime($date);
+    $result = round(($time_1 - $time_2) / 3600 / 24);
+    return $result;
+}
 
 /*
  * 视频
@@ -73,7 +86,7 @@ function poi_time_since( $older_date, $comment_date = false, $text = false ) {
   if($text){
     $output = '';
   }else{
-    $output = '发布于 ';
+    $output = '发表于 ';
   }
 
   if ( $since < 30 * 24 * 60 * 60 ) {
@@ -149,7 +162,7 @@ if(mokore_option('norobot')) add_action('pre_comment_on_post', 'mokore_robot_com
 // 纯英文评论拦截
 function scp_comment_post( $incoming_comment ) {
   if(!preg_match('/[一-龥]/u', $incoming_comment['comment_content'])){
-    mokore_ajax_comment_err('写点汉字吧，博主外语很捉急。You should type some Chinese word.');
+    mokore_ajax_comment_err('写点汉字吧，博主外语很捉急的。You should type some Chinese word.');
   }
   return( $incoming_comment );
 }
@@ -235,7 +248,7 @@ function Exuser_center(){ ?>
         }
     }
     function doUpdate(num){
-        document.getElementById('login-showtime').innerHTML = '空降成功，'+num+'秒后自动转到'+TYPE;
+        document.getElementById('login-showtime').innerHTML = '空降成功，感谢指挥部，'+num+'秒后自动转到'+TYPE;
         if(num == 0) { window.location=URL; }
     }
   </script>

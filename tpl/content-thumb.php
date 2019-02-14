@@ -13,7 +13,7 @@ if(has_post_thumbnail()){
 	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
 	$post_img = $large_image_url[0];
 }else{
-	$post_img = get_bloginfo('template_url') . '/images/temp.jpg';
+	$post_img = get_bloginfo('template_url') . 'http://wx2.sinaimg.cn/small/006rG8asly1fzte2eg8hvj30jg0chaao.jpg';
 }
 $the_cat = get_the_category();
 ?>
@@ -46,4 +46,4 @@ $the_cat = get_the_category();
 		</div>
 	</article>
 <?php
-endwhile; 
+endwhile;

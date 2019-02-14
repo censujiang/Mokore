@@ -49,6 +49,11 @@ if (mokore_option('mokore_meta') == true) {
 <link rel="shortcut icon" href="<?php echo mokore_option('mokore_logo_ico'); ?>"/>
 <?php } ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/inc/css/share.min.css">
+<!-- 自定义CSS开始 -->
+<?php if(mokore_option('head_css')){ ?>
+<link rel="stylesheet" href="<?php echo mokore_option('head_css'); ?>">
+<?php } ?>
+<!-- 自定义CSS结束 -->
 <style>
 	.row { padding: 20px 0 0 20px }
 	.row-pad { padding: 20px 0 0 60px }
@@ -56,7 +61,7 @@ if (mokore_option('mokore_meta') == true) {
 <?php wp_head(); ?>
 <script type="text/javascript">
 if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
-  alert('我求求您别特么用老掉牙的IE浏览器了吧！。');
+  alert('您的浏览器为IE内核，请使用Chrome浏览器或切换您的浏览器内核，否则某些页面无法正常显示。');
 }
 </script>
 <script>
@@ -80,7 +85,7 @@ var _hmt = _hmt || [];
 		if(!mokore_option('head_focus')){
 		$filter = mokore_option('focus_img_filter');
 		?>
-		<div class="headertop <?php echo $filter; ?>">
+		<div class="headertop">
 			<?php get_template_part('layouts/imgbox'); ?>
 		</div>
 		<?php } ?>

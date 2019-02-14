@@ -31,6 +31,13 @@
 			$site_map_link = mokore_option('site_map_link') ? '<a href="'.mokore_option('site_map_link').'" target="_blank" rel="nofollow">Sitemap</a>' : '';
 			printf(esc_html__( '%1$s &nbsp; %2$s &nbsp; %3$s &nbsp; %4$s', 'mokore' ), $site_map_link, '<a href="https://wordpress.org/" rel="designer" target="_blank" rel="nofollow">WordPress</a>强力驱动', '/','主题<a href="http://mokore.dfjcx.cn" target="_blank" rel="friend">Mokore</a> BY <a href="https://dfjcx.cn" target="_blank" rel="friend">江程训</a>', $statistics_link);
 			?>
+			<!-- 站点运行天数开始 -->
+			<?php if (mokore_option('web_runtime') != '0') { ?>
+					<div class="footer-device">
+							<p>本站已稳定运行 <?php echo get_web_buildtime(); ?> 天</p>
+					</div>
+			<?php } ?>
+			<!--站点运行天数结束  -->
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
@@ -50,7 +57,7 @@
 	<!-- m-nav-center -->
 	<div id="mo-nav">
 		<div class="m-avatar">
-			<?php $ava = mokore_option('focus_logo') ? mokore_option('focus_logo') : get_template_directory_uri().'/images/avatar.jpg'; ?>
+			<?php $ava = mokore_option('focus_logo') ? mokore_option('focus_logo') : get_template_directory_uri().'http://wx2.sinaimg.cn/small/006rG8asly1fzte28fllej30dw0dv75c.jpg'; ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">

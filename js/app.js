@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Mokore application js
  * @author CensuJiang
  * @url http://dfjcx.cn
@@ -232,7 +232,7 @@ var home = location.href,
         $('.video-stu').html('正在载入视频 ...').css({"bottom":"0px"});
         var t = Poi.movies.name.split(","), // 视频列表
         _t = t[Math.floor(Math.random() * t.length)]; // 随机抽取视频
-        $('#bgvideo').attr('src',Poi.movies.url+'/'+ _t +'.mp4');
+        $('#bgvideo').attr('src',Poi.movies.url);
         $('#bgvideo').attr('video-name',_t);
     },
     LV: function(){
@@ -652,8 +652,9 @@ $(function() {
         $(this).postLike();
     });
 
-    console.log("%c CensuJiang %c","background:#24272A; color:#ffffff","","http://dfjcx.cn");
+    console.log("%c 江程训（CensuJiang） %c","background:#24272A; color:#ffffff","","http://dfjcx.cn");
     console.log("%c Github %c","background:#24272A; color:#ffffff","","https://github.com/CensuJiang");
+    console.log("%c 友情提醒 %c","background:#24272A; color:#ffffff","","恭喜您开始学习Wordpress开发！本主题授权协议为Apache2.0，在二次开发本主题时请留下江程训的版权标记哦。");
 
 });
 

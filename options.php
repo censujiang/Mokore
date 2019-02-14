@@ -129,12 +129,12 @@ function optionsframework_options() {
 		'name' => __('站点图标', 'options_framework_theme'),
 		'desc' => __('设置后你将会在标签页上看到此图标', 'options_framework_theme'),
 		'id' => 'mokore_logo_ico',
-		'std' => $imagepath.'/images/favicon.ico',
+		'std' => '//wx2.sinaimg.cn/small/006rG8asly1fzte28fllej30dw0dv75c.jpg',
 		'type' => 'upload');
 
 	$options[] = array(
 		'name' => __('登录页LOGO', 'options_framework_theme'),
-		'desc' => __('由于江程训非常智障的将规则写在了css里面并且忘记了怎么写回去，所以请手动修改主题目录下"/images/login.png"', 'options_framework_theme'),
+		'desc' => __('登录页LOGO为你的站点logo，为什么我要在这里单独说呢？因为现在你可以新建一个页面，选择类型为login，然后在主题设置中强制设定那个页面为登录页。', 'options_framework_theme'),
 		'id' => 'mokore_logo_login',
 		);
 
@@ -232,22 +232,29 @@ function optionsframework_options() {
 		'type' => 'textarea');
 
 	$options[] = array(
+		'name' => __('自定义主题CSS地址', 'options_framework_theme'),
+		'desc' => __('如果您需要将您的主题的CSS托管在别处，请复制粘贴下方地址的css文件上传到你想托管的地方，再填写托管后的地址，不过请注意，主题升级时可能CSS将发生变动', 'options_framework_theme'),
+		'id' => 'head_css',
+		'std' => get_template_directory_uri().'/theme.css',
+		'type' => 'text');
+
+	$options[] = array(
 		'name' => __('版权信息', 'options_framework_theme'),
 		'desc' => __('版权信息文字，支持HTML代码', 'options_framework_theme'),
 		'id' => 'footer_info',
-		'std' => '&copy; 2018',
+		'std' => '&copy; 2019',
 		'type' => 'textarea');
 
 		$options[] = array(
 		'name' => __('Head代码', 'options_framework_theme'),
-		'desc' => __('Head代码，放在body底部，支持HTML代码', 'options_framework_theme'),
-		'id' => 'Head_code',
+		'desc' => __('Head代码，放在body底部，支持HTML代码，如果您需要更专业地插入代码请下载header-footer-code-manage', 'options_framework_theme'),
+		'id' => 'head_code',
 		'std' => '',
 		'type' => 'textarea');
 
 		$options[] = array(
 		'name' => __('Footer代码', 'options_framework_theme'),
-		'desc' => __('Footer代码，放在body底部，支持HTML代码', 'options_framework_theme'),
+		'desc' => __('Footer代码，放在body底部，支持HTML代码,如果您需要更专业地插入代码请下载header-footer-code-manage', 'options_framework_theme'),
 		'id' => 'footer_code',
 		'std' => '',
 		'type' => 'textarea');
@@ -270,6 +277,13 @@ function optionsframework_options() {
 		'desc' => __('默认开启，勾选关闭', 'options_framework_theme'),
 		'id' => 'head_focus',
 		'std' => '0',
+		'type' => 'checkbox');
+
+	$options[] = array(
+		'name' => __('Akina倾斜设计', 'options_framework_theme'),
+		'desc' => __('默认关闭，勾选关闭', 'options_framework_theme'),
+		'id' => 'focus_slant',
+		'std' => '1',
 		'type' => 'checkbox');
 
 	$options[] = array(
@@ -464,16 +478,16 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('GitHub', 'options_framework_theme'),
-		'desc' => __('GitHub地址', 'options_framework_theme'),
+		'desc' => __('GitHub个人主页地址', 'options_framework_theme'),
 		'id' => 'github',
-		'std' => 'http://mokere.dfjcx.cn',
+		'std' => 'https://github.com/censujiang',
 		'type' => 'text');
 
 	$options[] = array(
 		'name' => __('今日头条', 'options_framework_theme'),
 		'desc' => __('今日头条地址', 'options_framework_theme'),
 		'id' => 'toutiao',
-		'std' => 'http://mokere.dfjcx.cn',
+		'std' => 'https://www.toutiao.com/c/user/2569886708/',
 		'type' => 'text');
 
 		$options[] = array(
@@ -492,7 +506,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('哔哩哔哩', 'options_framework_theme'),
-		'desc' => __('哔哩哔哩UP主地址', 'options_framework_theme'),
+		'desc' => __('哔哩哔哩UP主个人空间地址', 'options_framework_theme'),
 		'id' => 'bili',
 		'std' => '',
 		'type' => 'text');
@@ -506,7 +520,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('支付宝', 'options_framework_theme'),
-		'desc' => __('支付宝加朋友y二维码', 'options_framework_theme'),
+		'desc' => __('支付宝添加朋友二维码', 'options_framework_theme'),
 		'id' => 'alipay',
 		'type' => 'upload');
 
@@ -598,7 +612,7 @@ function optionsframework_options() {
 		'name' => __('聚焦图一', 'options_framework_theme'),
 		'desc' => __('尺寸257px*160px', 'options_framework_theme'),
 		'id' => 'feature1_img',
-		'std' => $imagepath.'/temp.jpg',
+		'std' => 'http://wx4.sinaimg.cn/mw690/006rG8asly1fzte2eg8hvj30jg0chaao.jpg',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -619,7 +633,7 @@ function optionsframework_options() {
 		'name' => __('聚焦图二', 'options_framework_theme'),
 		'desc' => __('尺寸257px*160px', 'options_framework_theme'),
 		'id' => 'feature2_img',
-		'std' => $imagepath.'/temp.jpg',
+		'std' => 'http://wx4.sinaimg.cn/mw690/006rG8asly1fzte2eg8hvj30jg0chaao.jpg',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -640,7 +654,7 @@ function optionsframework_options() {
 		'name' => __('聚焦图三', 'options_framework_theme'),
 		'desc' => __('尺寸257px*160px', 'options_framework_theme'),
 		'id' => 'feature3_img',
-		'std' => $imagepath.'/temp.jpg',
+		'std' => 'http://wx4.sinaimg.cn/mw690/006rG8asly1fzte2eg8hvj30jg0chaao.jpg',
 		'type' => 'upload');
 
 	$options[] = array(
@@ -686,9 +700,23 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('公告内容', 'options_framework_theme'),
-		'desc' => __('公告内容，文字超出142个字节将会被滚动显示（移动端无效），一个汉字 = 3字节，一个字母 = 1字节，自己计算吧', 'options_framework_theme'),
+		'desc' => __('公告内容，文字超出142个字节将会被滚动显示，一个汉字 = 3字节，一个字母 = 1字节，自己计算吧', 'options_framework_theme'),
 		'id' => 'notice_title',
 		'std' => '',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('显示网站运行时间', 'options_framework_theme'),
+		'desc' => __('默认关闭，勾选开启', 'options_framework_theme'),
+		'id' => 'web_runtime',
+		'std' => '0',
+		'type' => 'checkbox');
+
+	$options[] = array(
+		'name' => __('建站日期', 'options_framework_theme'),
+		'desc' => __('日期格式：2019-2-14（年-月-日）', 'options_framework_theme'),
+		'id' => 'web_buildtime',
+		'std' => '2019-2-14',
 		'type' => 'text');
 
 	$options[] = array(

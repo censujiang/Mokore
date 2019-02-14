@@ -541,7 +541,7 @@ function bolo_QTnextpage_arg1() {
  * 后台登录页
  * @M.J
  */
-//Login Page style
+//登录页规则
 function custom_login() {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
 	echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
@@ -565,11 +565,11 @@ function custom_html() {
 	if ( mokore_option('login_bg') ) {
 		$loginbg = mokore_option('login_bg');
 	}else{
-		$loginbg = get_bloginfo('template_directory').'/images/hd.jpg';
+		$loginbg = get_bloginfo('template_directory').'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549344693088&di=6a1850d7cff47286425b6fe2a8469d86&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F592004e368ee1.jpg%3Fdown';
 	}
 	echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/login.js"></script>'."\n";
 	echo '<script type="text/javascript">'."\n";
-	echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"'.get_bloginfo('template_directory').'/images/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");'."\n";
+	echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"'.get_bloginfo('template_directory').'http://wx2.sinaimg.cn/small/006rG8asly1fzte2bkxqfg301m00a0jd.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");'."\n";
 	echo 'jQuery(\'#bg\').children(\'img\').attr(\'src\', \''.$loginbg.'\').load(function(){'."\n";
 	echo '	resizeImage(\'bg\');'."\n";
 	echo '	jQuery(window).bind("resize", function() { resizeImage(\'bg\'); });'."\n";
@@ -628,5 +628,24 @@ function comment_mail_notify($comment_id){
 }
 add_action('comment_post', 'comment_mail_notify');
 
+//文章目录
+function article_index($content) {
+$matches = array();
+$ul_li = '';
+$r = '/<h([1-4]).*?\>(.*?)<\/h[1-4]>/is';//匹配的H元素到底是多少
+if(is_single() && preg_match_all($r, $content, $matches)) {
+foreach($matches[1] as $key => $value) {
+$title = trim(strip_tags($matches[2][$key]));
+$content = str_replace($matches[0][$key], '<h' . $value . ' id="title-' . $key . '">'.$title.'</h2>', $content);
+$ul_li .= '<li><a href="#title-'.$key.'" title="'.$title.'">'.$title."</a></li>\n";//内部目录#链接的属性
+}
+$content = "\n<div id=\"article-index\">
+<strong>文章目录</strong>
+<ul id=\"index-ul\">\n" . $ul_li . "</ul>
+</div>\n" . $content;
+}
+return $content;
+}
+add_filter( 'the_content', 'article_index' );
 
 //code end

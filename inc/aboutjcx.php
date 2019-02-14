@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 function mokore_add_admin_menu_page(){
 		add_menu_page('aboutjcx', '关于江程训', 'edit_themes', 'mokore_admin_page_root', 'mokore_admin_page', 'dashicons-flag', 100);
