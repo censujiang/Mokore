@@ -1,3 +1,4 @@
+<a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg"></a>支持996ICU！
 #
 ![](http://img0.dfjcx.cn/2018/11/timg.jpg)
 
