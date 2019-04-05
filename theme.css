@@ -1,13 +1,11 @@
 @charset "utf-8";
 /*
 Theme Name: Mokore
-Theme URI: http://mokore.dfjcx.cn
+Theme URI: https://mokore.dfjcx.cn
 Author: 江程训（CensuJiang）
-Author URI: http://dfjcx.cn
+Author URI: https://CensuJiang.com
 Description: 一个Wordpress二次元个人博客主题，简约而不简单，Made BY 江程训
-Version: 1.2
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version: 1.2.1
 Text Domain: mokore
 Tags: Akina,二次元主题,个人博客,二次元，大佬必备
 */
@@ -5732,8 +5730,8 @@ i.iconfont.down {
 }
 
 .reward-row li img {
-    width: 130px;
-    max-width: 130px;
+    width: 420px;
+    max-width: 420px;
     border-radius: 3px;
     position: relative;
 }

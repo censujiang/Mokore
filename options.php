@@ -228,7 +228,7 @@ function optionsframework_options() {
 		'name' => __('博主描述', 'options_framework_theme'),
 		'desc' => __('一段自我描述的话', 'options_framework_theme'),
 		'id' => 'admin_des',
-		'std' => '水树花灯是个大傻逼，别问江程训为什么这么记仇',
+		'std' => '这里江程训，感谢使用本主题哦~',
 		'type' => 'textarea');
 
 	$options[] = array(
@@ -323,7 +323,7 @@ function optionsframework_options() {
 
 	 $options[] = array(
 		'name' => __('视频名称', 'options_framework_theme'),
-		'desc' => __('abc.mp4 ，只需要填写视频文件名 abc 即可，多个用英文逗号隔开如 abc,efg ，无需在意顺序，因为加载是随机的抽取的 ', 'options_framework_theme'),
+		'desc' => __('abc.mp4 ，只需要填写视频文件名 abc.mp4 即可，多个用英文逗号隔开如 abc.mp4,efg.mp4 ，无需在意顺序，因为加载是随机的抽取的 ', 'options_framework_theme'),
 		'id' => 'amv_title',
 		'std' => '',
 		'type' => 'text');
@@ -471,7 +471,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('逗帆', 'options_framework_theme'),
-		'desc' => __('逗帆网UP主地址，本主题作者江程训在逗帆担任站长，如果您可以的话请务必在逗帆网注册账号哦~', 'options_framework_theme'),
+		'desc' => __('逗帆已于2019年3月清空了数据库，纪念江程训那逝去的在逗帆奋斗的日子', 'options_framework_theme'),
 		'id' => 'dofan',
 		'std' => 'https://www.dofan.cn/archives/author/2',
 		'type' => 'text');
@@ -494,7 +494,7 @@ function optionsframework_options() {
 		'name' => __('QQ看点（公众号）', 'options_framework_theme'),
 		'desc' => __('QQ看点地址', 'options_framework_theme'),
 		'id' => 'kandian',
-		'std' => 'http://mokere.dfjcx.cn',
+		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
@@ -775,12 +775,6 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'text');
 
-	$options[] = array(
-		'name' => __('后台登陆界面背景图', 'options_framework_theme'),
-		'desc' => __('该地址为空则使用默认图片', 'options_framework_theme'),
-		'id' => 'login_bg',
-		'type' => 'upload');
-
 
 	//前台登录
 	$options[] = array(
@@ -817,7 +811,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('注册验证', 'options_framework_theme'),
-		'desc' => __('勾选开启滑动验证(这不是评论验证！只是注册验证)', 'options_framework_theme'),
+		'desc' => __('勾选开启滑动验证(这不是评论验证！只是注册验证', 'options_framework_theme'),
 		'id' => 'login_validate',
 		'std' => '0',
 		'type' => 'checkbox');

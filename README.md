@@ -11,15 +11,15 @@
 # 主题基本信息
 
 -   主题名称：Mokore
--   主题作者：[江程训（CensuJiang）](https://dfjcx.cn/)
--   当前版本：1.2（2019-2-14持续更新中）
+-   主题作者：[江程训（CensuJiang）](https://censujiang.com/)
+-   当前版本：1.2.1（2019-4-5持续更新中）
 -   主题类型：WordPress，个人博客，博客主题，二次元，自媒体，大佬必备
 -   特色描述：简约而不简单，特别适合喜欢二次元的自媒体、程序员和画师
--   兼容环境：**PHP5.6.0 +**，WordPress 4.8+
+-   兼容环境：**PHP5.6 +**，WordPress 4.9+
 -   官方演示：[https://mokore.dfjcx.cn/](https://mokore.dfjcx.cn/)
 -   主题QQ群： [_346363551_](http://shang.qq.com/wpa/qunwpa?idkey=d99e5a83cbba65cd3054bd38b0c9b6bb8cc524b32d269ccb5d67e6d46723f569)
 -   GIthub下载：[https://github.com/censujiang/Mokore](https://github.com/censujiang/Mokore)
--   更新版本的这一天正好是情人节，那么各位是否脱单了呢🤣
+-   这个版本只修复了BUG哦
 
 # 功能简介
 
